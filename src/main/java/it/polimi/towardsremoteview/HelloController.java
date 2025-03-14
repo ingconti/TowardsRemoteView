@@ -14,9 +14,9 @@ public class HelloController {
     }
 
 
-    private Stage myStage;
+    private Stage stage;
     public void setStage(Stage stage) {
-        myStage = stage;
+        stage = stage;
     }
 
 }
