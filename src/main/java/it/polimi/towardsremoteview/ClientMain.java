@@ -35,13 +35,6 @@ public class ClientMain extends Application {
     }
 
 
-    /*removed
-     Automaton automaton;
-    public ClientMain() {
-        //removed this.automaton = new Automaton();
-    }
-     */
-
     VirtualServer   virtualServer;
     public ClientMain() {
         this.virtualServer = new VirtualServer();

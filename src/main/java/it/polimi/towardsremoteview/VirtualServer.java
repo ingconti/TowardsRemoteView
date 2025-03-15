@@ -40,19 +40,24 @@ public class VirtualServer {
             System.err.println(e.toString() + " " + hostName);
             System.exit(1);
         }
-        /* removed:
-        String userInput = "";
+        // here was while..
+        Thread t1 = new Thread(this::readingLoop);
+    }
+
+    void readingLoop(){
+        System.out.println("reading thread started");
+
         while (true) {
             try {
-                if (!((userInput = stdIn.readLine()) != null)) break;
-                out.println(userInput);
-                System.out.println("echo: " + in.readLine());
+                String answer = in.readLine();
+                System.out.println("echo: " + answer);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         } // while
-         */
     }
+
+
 
     void sendCmd(String cmd){
         out.println(cmd);
