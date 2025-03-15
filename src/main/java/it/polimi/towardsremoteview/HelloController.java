@@ -15,8 +15,12 @@ public class HelloController {
 
 
     private Stage stage;
-    public void setStage(Stage stage) {
+    public void setStage(Stage stage, Automaton automaton) {
         stage = stage;
+        this.automaton = automaton;
     }
+
+    private Automaton automaton;
+
 
 }
