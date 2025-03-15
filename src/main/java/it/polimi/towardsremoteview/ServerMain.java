@@ -1,4 +1,4 @@
-package it.polimi;
+package it.polimi.towardsremoteview;
 
 import java.io.BufferedReader;
 import java.io.IOException;
