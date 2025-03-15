@@ -17,11 +17,10 @@ public class ClientMain extends Application {
 
         Parent root = fxmlLoader.load();
         Controlller controller = fxmlLoader.getController();
-        // removed controller.setStage(stage, this.automaton);
-        controller.setStage(stage);
+        //was: controller.setStage(stage);
+        controller.setStage(stage, this.virtualServer);
 
         Scene scene = new Scene(root, 320, 240);
-
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();

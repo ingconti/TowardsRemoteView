@@ -10,26 +10,18 @@ public class Controlller {
 
     @FXML
     protected void onHelloButtonClick() {
-       /*removed:
-        welcomeText.setText("Welcome to JavaFX Application!");
-        this.automaton.evolve();
-        */
         this.updateView();
     }
 
     void updateView(){
-        /* removed
-        String status = this.automaton.getState().toString();
-        this.welcomeText.setText(status);
-        */
+
     }
 
+    VirtualServer virtualServer;
     private Stage stage;
-    //was: public void setStage(Stage stage, Automaton automaton) {
-        public void setStage(Stage stage) {
-        stage = stage;
-        //removed: this.automaton = automaton;
+        public void setStage(Stage stage, VirtualServer virtualServer) {
+        this.stage = stage;
+        this.virtualServer = virtualServer;
     }
 
-    //removed: private Automaton automaton;
 }
