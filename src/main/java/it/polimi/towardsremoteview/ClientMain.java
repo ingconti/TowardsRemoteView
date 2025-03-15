@@ -8,17 +8,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class ClientMain extends Application {
 
 
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new
-                FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+                FXMLLoader(ClientMain.class.getResource("hello-view.fxml"));
 
         // Added:
         Parent root = fxmlLoader.load();
-        HelloController controller = fxmlLoader.getController();
+        Controlller controller = fxmlLoader.getController();
         //was: controller.setStage(stage, this.automaton);
         controller.setStage(stage, this.automaton);
 
@@ -36,7 +36,7 @@ public class HelloApplication extends Application {
 
     // add model.
     Automaton automaton;
-    public HelloApplication() {
+    public ClientMain() {
         this.automaton = new Automaton();
     }
 
