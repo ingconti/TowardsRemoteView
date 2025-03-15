@@ -8,6 +8,9 @@ import java.net.Socket;
 
 public class VirtualServer {
 
+    PrintWriter out = null;
+    BufferedReader in = null;
+
     void start() {
 
         String hostName = "127.0.0.1";
@@ -20,9 +23,10 @@ public class VirtualServer {
             System.err.println(e.toString() + " " + hostName);
             System.exit(1);
         }
-
+        /* moved up, class instances:
         PrintWriter out = null;
         BufferedReader in = null;
+         */
         BufferedReader stdIn = null;
         try {
             out = new PrintWriter(echoSocket.getOutputStream(), true);
@@ -36,7 +40,7 @@ public class VirtualServer {
             System.err.println(e.toString() + " " + hostName);
             System.exit(1);
         }
-
+        /* removed:
         String userInput = "";
         while (true) {
             try {
@@ -47,5 +51,10 @@ public class VirtualServer {
                 throw new RuntimeException(e);
             }
         } // while
+         */
+    }
+
+    void sendCmd(String cmd){
+        out.println(cmd);
     }
 }

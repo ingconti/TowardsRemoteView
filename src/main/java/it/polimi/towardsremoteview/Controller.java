@@ -4,12 +4,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-public class Controlller {
+import java.util.Date;
+
+public class Controller {
     @FXML
     private Label welcomeText;
 
     @FXML
     protected void onHelloButtonClick() {
+        String msg = new Date().toString();
+        this.virtualServer.sendCmd(msg);
         this.updateView();
     }
 

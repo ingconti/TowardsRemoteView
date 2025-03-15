@@ -16,7 +16,7 @@ public class ClientMain extends Application {
                 FXMLLoader(ClientMain.class.getResource("hello-view.fxml"));
 
         Parent root = fxmlLoader.load();
-        Controlller controller = fxmlLoader.getController();
+        Controller controller = fxmlLoader.getController();
         //was: controller.setStage(stage);
         controller.setStage(stage, this.virtualServer);
 
