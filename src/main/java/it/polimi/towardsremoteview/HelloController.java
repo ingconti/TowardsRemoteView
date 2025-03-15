@@ -10,9 +10,15 @@ public class HelloController {
 
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+       //was: welcomeText.setText("Welcome to JavaFX Application!");
+        this.automaton.evolve();
+        this.updateView();
     }
 
+    void updateView(){
+        String status = this.automaton.getState().toString();
+        this.welcomeText.setText(status);
+    }
 
     private Stage stage;
     public void setStage(Stage stage, Automaton automaton) {
