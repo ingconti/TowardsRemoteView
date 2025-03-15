@@ -23,23 +23,23 @@ public class VirtualServer {
             System.err.println(e.toString() + " " + hostName);
             System.exit(1);
         }
-        /* moved up, class instances:
-        PrintWriter out = null;
-        BufferedReader in = null;
-         */
+
         BufferedReader stdIn = null;
         try {
             out = new PrintWriter(echoSocket.getOutputStream(), true);
             in = new BufferedReader(
                     new InputStreamReader(echoSocket.getInputStream()));
 
-            stdIn = new BufferedReader(
-                    new InputStreamReader(System.in));
+           /* stdIn = new BufferedReader(
+                    new InputStreamReader(System.in));*/
 
-        } catch (IOException e) {
-            System.err.println(e.toString() + " " + hostName);
-            System.exit(1);
+        } catch (Exception e) {
+            System.err.println(e.toString());
+            System.exit(99999);
         }
+
+        ClientThread clientThread = new ClientThread(in);
+        clientThread.start();
     }
 
     void sendCmd(String cmd){
