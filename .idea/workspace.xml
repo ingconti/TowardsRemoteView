@@ -17,28 +17,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ServerMain.executor": "Run",
-    "git-widget-placeholder": "06-VirtualServerPassedDownToController",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ServerMain.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;06-VirtualServerPassedDownToController&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.ServerMain">
-    <configuration name="ClientMain" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="it.polimi.towardsremoteview.ClientMain" />
-      <module name="TowardsRemoteView" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ServerMain" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="it.polimi.towardsremoteview.ServerMain" />
-      <module name="TowardsRemoteView" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.ClientMain" />
       <item itemvalue="Application.ServerMain" />
