@@ -52,6 +52,7 @@ public class ServerMain {
                 System.out.println(s);
                 out.println(s.toUpperCase());
             }
+            System.out.println("done");
         } catch (IOException e) {
             e.printStackTrace();
         }

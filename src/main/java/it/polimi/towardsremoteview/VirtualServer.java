@@ -40,24 +40,7 @@ public class VirtualServer {
             System.err.println(e.toString() + " " + hostName);
             System.exit(1);
         }
-        // here was while..
-        Thread t1 = new Thread(this::readingLoop);
     }
-
-    void readingLoop(){
-        System.out.println("reading thread started");
-
-        while (true) {
-            try {
-                String answer = in.readLine();
-                System.out.println("echo: " + answer);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        } // while
-    }
-
-
 
     void sendCmd(String cmd){
         out.println(cmd);
