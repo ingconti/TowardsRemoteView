@@ -11,11 +11,22 @@ public class Controller {
     private Label welcomeText;
 
     @FXML
-    protected void onHelloButtonClick() {
-        String msg = new Date().toString();
+    protected void onEvolveButtonClick() {
+        // was: String msg = new Date().toString();
+        String msg = "g"; // as per AutomatonFromNetwork.
         this.virtualServer.sendCmd(msg);
         this.updateView();
     }
+
+    @FXML
+    protected void onPayButtonClick() {
+        // was: String msg = new Date().toString();
+        String msg = "p"; // as per AutomatonFromNetwork.
+        this.virtualServer.sendCmd(msg);
+        this.updateView();
+    }
+
+
 
     void updateView(){
 
