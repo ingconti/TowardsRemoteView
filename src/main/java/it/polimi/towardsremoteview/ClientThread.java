@@ -12,7 +12,6 @@ public class ClientThread extends Thread {
 
     public void run() {
         System.out.println("ClientThread started");
-        long startTime = System.currentTimeMillis();
         int i = 0;
 
         while (true) {
