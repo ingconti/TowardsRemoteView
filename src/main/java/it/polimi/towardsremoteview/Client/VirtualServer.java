@@ -1,4 +1,4 @@
-package it.polimi.towardsremoteview;
+package it.polimi.towardsremoteview.Client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ public class VirtualServer {
     PrintWriter out = null;
     BufferedReader in = null;
 
-    void start() {
+    public void start() {
 
         String hostName = "127.0.0.1";
         int portNumber = 1234;
@@ -38,7 +38,7 @@ public class VirtualServer {
         clientThread.start();
     } // end of start
 
-    void sendCmd(String cmd){
+    public void sendCmd(String cmd){
         out.println(cmd);
     }
 }

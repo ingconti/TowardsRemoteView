@@ -3,8 +3,10 @@ module it.polimi.towardsremoteview {
     requires javafx.fxml;
 
 
-    opens it.polimi.towardsremoteview to javafx.fxml;
-    exports it.polimi.towardsremoteview;
-    exports it.polimi.towardsremoteview.Model;
-    opens it.polimi.towardsremoteview.Model to javafx.fxml;
+    exports it.polimi.towardsremoteview.Server.Model;
+    opens it.polimi.towardsremoteview.Server.Model to javafx.fxml;
+    exports it.polimi.towardsremoteview.Server;
+    opens it.polimi.towardsremoteview.Server to javafx.fxml;
+    exports it.polimi.towardsremoteview.Client;
+    opens it.polimi.towardsremoteview.Client to javafx.fxml;
 }

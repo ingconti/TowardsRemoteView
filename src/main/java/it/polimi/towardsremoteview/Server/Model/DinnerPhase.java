@@ -1,4 +1,4 @@
-package it.polimi.towardsremoteview.Model;
+package it.polimi.towardsremoteview.Server.Model;
 public enum DinnerPhase implements Comparable<DinnerPhase> {
     UNKNOWN,
     ENTREE,

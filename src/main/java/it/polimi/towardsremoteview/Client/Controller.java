@@ -1,10 +1,8 @@
-package it.polimi.towardsremoteview;
+package it.polimi.towardsremoteview.Client;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
-import java.util.Date;
 
 public class Controller {
     @FXML

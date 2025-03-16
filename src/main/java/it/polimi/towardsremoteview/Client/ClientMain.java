@@ -1,4 +1,4 @@
-package it.polimi.towardsremoteview;
+package it.polimi.towardsremoteview.Client;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -35,7 +35,7 @@ public class ClientMain extends Application {
     }
 
 
-    VirtualServer   virtualServer;
+    VirtualServer virtualServer;
     public ClientMain() {
         this.virtualServer = new VirtualServer();
     }

@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>it.polimi.towardsremoteview/it.polimi.towardsremoteview.ClientMain
+                            <mainClass>it.polimi.towardsremoteview/it.polimi.towardsremoteview.Client.ClientMain
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

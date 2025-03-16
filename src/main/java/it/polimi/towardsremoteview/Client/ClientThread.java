@@ -1,4 +1,4 @@
-package it.polimi.towardsremoteview;
+package it.polimi.towardsremoteview.Client;
 
 import java.io.BufferedReader;
 import java.io.IOException;

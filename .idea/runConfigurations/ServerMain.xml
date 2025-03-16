@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="ServerMain" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="it.polimi.towardsremoteview.ServerMain" />
+    <option name="MAIN_CLASS_NAME" value="it.polimi.towardsremoteview.Server.ServerMain" />
     <module name="TowardsRemoteView" />
     <method v="2">
       <option name="Make" enabled="true" />

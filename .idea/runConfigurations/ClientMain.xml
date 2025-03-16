@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="ClientMain" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="it.polimi.towardsremoteview.ClientMain" />
+    <option name="MAIN_CLASS_NAME" value="it.polimi.towardsremoteview.Client.ClientMain" />
     <module name="TowardsRemoteView" />
     <method v="2">
       <option name="Make" enabled="true" />

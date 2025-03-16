@@ -1,4 +1,4 @@
-package it.polimi.towardsremoteview.Model;
+package it.polimi.towardsremoteview.Server.Model;
 
 
 public class Automaton {
