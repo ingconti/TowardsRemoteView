@@ -1,6 +1,9 @@
 package it.polimi.towardsremoteview;
 
 
+import it.polimi.towardsremoteview.Model.Automaton;
+import it.polimi.towardsremoteview.Model.DinnerPhase;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

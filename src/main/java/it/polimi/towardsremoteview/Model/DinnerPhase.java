@@ -1,5 +1,5 @@
-package it.polimi.towardsremoteview;
-enum DinnerPhase implements Comparable<DinnerPhase> {
+package it.polimi.towardsremoteview.Model;
+public enum DinnerPhase implements Comparable<DinnerPhase> {
     UNKNOWN,
     ENTREE,
     MAIN_COURSE,
@@ -7,7 +7,7 @@ enum DinnerPhase implements Comparable<DinnerPhase> {
     DESSERT,
     THE_END_OF_LUNCH;
 
-    DinnerPhase next() {
+    public DinnerPhase next() {
 
         switch (this) {
             case ENTREE:
@@ -29,7 +29,7 @@ enum DinnerPhase implements Comparable<DinnerPhase> {
         return UNKNOWN;
     }
 
-    static DinnerPhase fromString(String s) {
+    public static DinnerPhase fromString(String s) {
 
         switch (s.toUpperCase().charAt(0)) {
             case 'E':
