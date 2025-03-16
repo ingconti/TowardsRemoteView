@@ -29,18 +29,14 @@ public class VirtualServer {
             out = new PrintWriter(echoSocket.getOutputStream(), true);
             in = new BufferedReader(
                     new InputStreamReader(echoSocket.getInputStream()));
-
-           /* stdIn = new BufferedReader(
-                    new InputStreamReader(System.in));*/
-
         } catch (Exception e) {
             System.err.println(e.toString());
-            System.exit(99999);
+            System.exit(1);
         }
 
         ClientThread clientThread = new ClientThread(in);
         clientThread.start();
-    }
+    } // end of start
 
     void sendCmd(String cmd){
         out.println(cmd);

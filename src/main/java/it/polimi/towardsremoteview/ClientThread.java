@@ -17,26 +17,11 @@ public class ClientThread extends Thread {
 
         while (true) {
             try {
-                Thread.sleep(1000);
-            }catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            try {
                 String answer = this.reader.readLine();
                 System.out.println(answer);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        /*
-        while (true) {
-            try {
-                String answer = this.reader.readLine();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        } // while
-         */
     }
 }
