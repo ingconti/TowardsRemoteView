@@ -44,13 +44,13 @@ public class ServerMain {
             e.printStackTrace();
         }
 
-        // waits for data and reads it in until connection dies
-        // readLine() blocks until the server receives a new line from client
         String s = "";
         try {
             while ((s = in.readLine()) != null) {
                 System.out.println(s);
-                out.println(s.toUpperCase());
+                //was: out.println(s.toUpperCase());
+                out.println(processCmd(s));
+
             }
             System.out.println("done");
         } catch (IOException e) {
@@ -59,4 +59,29 @@ public class ServerMain {
 
         // we should close..
     }
-}
+
+
+        static Automaton model = new Automaton();
+
+        // from: static Boolean readLoop(BufferedReader in, PrintWriter out ) on Automamton code.
+        static String processCmd(String s){
+
+            String stateString;
+            Boolean goOn = false;
+
+            s = s.toUpperCase();
+            System.out.println(s);
+            if (s.equals("G")){
+                goOn = model.evolve();
+            }else if (s.equals("P")){
+                model.setPaid();
+            }else{
+                DinnerPhase ph = DinnerPhase.fromString(s);
+                goOn = model.evolveTo(ph);
+            }
+
+            stateString = model.getState().toString();
+            return stateString;
+        }
+
+    }
