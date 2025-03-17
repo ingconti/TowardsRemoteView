@@ -1,7 +1,5 @@
 package it.polimi.towardsremoteview.Server;
 
-import it.polimi.towardsremoteview.Server.Model.Automaton;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -12,17 +10,15 @@ public class VirtualView {
 
     BufferedReader in = null;
     PrintWriter out = null;
-
     Socket clientSocket = null;
-    Automaton model = null;
+    Controller controller = null;
 
-    public VirtualView(Automaton automaton, Socket clientSocket) {
-        this.model = automaton;
+    public VirtualView(Socket clientSocket, Controller controller) {
         this.clientSocket = clientSocket;
+        this.controller = controller;
 
         try {
-            in = new BufferedReader(
-                    new InputStreamReader(clientSocket.getInputStream()));
+            in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             out = new PrintWriter(clientSocket.getOutputStream(), true);
 
         } catch (IOException e) {
@@ -37,6 +33,7 @@ public class VirtualView {
             while ((s = in.readLine()) != null) {
                 System.out.println(s);
                 // no more...out.println(processCmd(s));
+                this.controller.evolve(s);
             }
             System.out.println("done");
         } catch (IOException e) {

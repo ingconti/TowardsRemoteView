@@ -1,15 +1,10 @@
 package it.polimi.towardsremoteview.Server;
 
-
-import it.polimi.towardsremoteview.Server.Model.Automaton;
-import it.polimi.towardsremoteview.Server.Model.DinnerPhase;
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+
+import it.polimi.towardsremoteview.Server.Model.Automaton;
 
 public class ServerMain {
     static int portNumber = 1234;
@@ -36,7 +31,8 @@ public class ServerMain {
 
         System.out.println("Accepted");
 
-        VirtualView virtualView = new VirtualView(model, clientSocket);
+        Controller controller = new Controller(model);
+        VirtualView virtualView = new VirtualView(clientSocket, controller);
         virtualView.networkEventLoop();
         /*
         BufferedReader in = null;
