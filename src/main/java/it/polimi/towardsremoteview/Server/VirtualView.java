@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.security.spec.RSAOtherPrimeInfo;
 
 public class VirtualView {
 
@@ -33,7 +34,8 @@ public class VirtualView {
             while ((s = in.readLine()) != null) {
                 System.out.println(s);
                 // no more...out.println(processCmd(s));
-                this.controller.evolve(s);
+                String status = this.controller.processCmd(s);
+                System.out.println(status); // onky for debug. we do NOT send back!
             }
             System.out.println("done");
         } catch (IOException e) {
