@@ -1,5 +1,6 @@
 package it.polimi.towardsremoteview.Server;
 
+import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,6 +19,11 @@ public class VirtualView {
 
     public VirtualView(Socket clientSocket, Controller controller) {
         this.clientSocket = clientSocket;
+
+        CallBack callBack = (PropertyChangeEvent evt) -> {
+
+        };
+
         this.listener = new ModelListener();
         this.controller = controller;
         controller.setListener(this.listener);
