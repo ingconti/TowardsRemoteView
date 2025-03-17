@@ -13,11 +13,11 @@ import java.net.Socket;
 
 public class ServerMain {
     static int portNumber = 1234;
+    static Automaton model = new Automaton();
 
     public static void main(String[] args) {
 
         System.out.println("Server Started!");
-
         ServerSocket serverSocket = null;
         try {
             serverSocket = new ServerSocket(portNumber);
@@ -36,6 +36,9 @@ public class ServerMain {
 
         System.out.println("Accepted");
 
+        VirtualView virtualView = new VirtualView(model, clientSocket);
+        virtualView.networkEventLoop();
+        /*
         BufferedReader in = null;
         PrintWriter out = null;
         try {
@@ -51,22 +54,17 @@ public class ServerMain {
         try {
             while ((s = in.readLine()) != null) {
                 System.out.println(s);
-                //was: out.println(s.toUpperCase());
                 out.println(processCmd(s));
-
             }
             System.out.println("done");
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+*/
         // we should close..
     }
 
-
-        static Automaton model = new Automaton();
-
-        // from: static Boolean readLoop(BufferedReader in, PrintWriter out ) on Automamton code.
+/* moved
         static String processCmd(String s){
 
             String stateString;
@@ -86,5 +84,6 @@ public class ServerMain {
             stateString = model.getState().toString();
             return stateString;
         }
+*/
 
-    }
+}
