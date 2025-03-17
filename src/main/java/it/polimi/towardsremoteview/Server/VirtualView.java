@@ -21,10 +21,12 @@ public class VirtualView {
         this.clientSocket = clientSocket;
 
         CallBack callBack = (PropertyChangeEvent evt) -> {
-
+            String debugStr = evt.getPropertyName()  + " from: " +
+                    evt.getOldValue() + " to: "  + evt.getNewValue();
+            System.out.println(debugStr);
         };
 
-        this.listener = new ModelListener();
+        this.listener = new ModelListener(callBack);
         this.controller = controller;
         controller.setListener(this.listener);
 

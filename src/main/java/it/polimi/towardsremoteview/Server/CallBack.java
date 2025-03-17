@@ -4,6 +4,6 @@ import java.beans.PropertyChangeEvent;
 
 
 public interface CallBack {
-    void apply(PropertyChangeEvent evt);
+    void gotEvent(PropertyChangeEvent evt);
 
 }
