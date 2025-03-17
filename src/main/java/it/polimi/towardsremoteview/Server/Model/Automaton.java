@@ -1,6 +1,8 @@
 package it.polimi.towardsremoteview.Server.Model;
 
 
+import java.beans.PropertyChangeListener;
+
 public class Automaton {
 
     private Boolean paid = false;
@@ -55,5 +57,10 @@ public class Automaton {
         return false;
     }
 
+    private PropertyChangeListener listener;
+
+    public void setListener(PropertyChangeListener listener) {
+        this.listener = listener;
+    }
 
 }

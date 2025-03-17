@@ -3,6 +3,8 @@ package it.polimi.towardsremoteview.Server;
 import it.polimi.towardsremoteview.Server.Model.Automaton;
 import it.polimi.towardsremoteview.Server.Model.DinnerPhase;
 
+import java.beans.PropertyChangeListener;
+
 public class Controller {
     Automaton model = null;
 
@@ -28,4 +30,10 @@ public class Controller {
         stateString = model.getState().toString();
         return stateString;
     }
+
+
+    public void setListener(PropertyChangeListener listener) {
+        this.model.setListener(listener);
+    }
+
 }

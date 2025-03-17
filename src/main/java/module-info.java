@@ -1,6 +1,7 @@
 module it.polimi.towardsremoteview {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     exports it.polimi.towardsremoteview.Server.Model;
