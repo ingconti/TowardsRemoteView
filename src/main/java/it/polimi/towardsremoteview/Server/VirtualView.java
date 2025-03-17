@@ -1,5 +1,7 @@
 package it.polimi.towardsremoteview.Server;
 
+import it.polimi.towardsremoteview.Server.Model.DinnerPhase;
+
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.BufferedReader;
@@ -21,9 +23,14 @@ public class VirtualView {
         this.clientSocket = clientSocket;
 
         CallBack callBack = (PropertyChangeEvent evt) -> {
+            /*
             String debugStr = evt.getPropertyName()  + " from: " +
                     evt.getOldValue() + " to: "  + evt.getNewValue();
             System.out.println(debugStr);
+            */
+            DinnerPhase state = this.controller.model.getState();
+            String answer = state.toString();
+            out.println(answer);
         };
 
         this.listener = new ModelListener(callBack);
