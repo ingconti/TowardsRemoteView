@@ -34,52 +34,8 @@ public class ServerMain {
         Controller controller = new Controller(model);
         VirtualView virtualView = new VirtualView(clientSocket, controller);
         virtualView.networkEventLoop();
-        /*
-        BufferedReader in = null;
-        PrintWriter out = null;
-        try {
-            in = new BufferedReader(
-                    new InputStreamReader(clientSocket.getInputStream()));
-            out = new PrintWriter(clientSocket.getOutputStream(), true);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        String s = "";
-        try {
-            while ((s = in.readLine()) != null) {
-                System.out.println(s);
-                out.println(processCmd(s));
-            }
-            System.out.println("done");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-*/
         // we should close..
     }
-
-/* moved
-        static String processCmd(String s){
-
-            String stateString;
-            Boolean goOn = false;
-
-            s = s.toUpperCase();
-            System.out.println(s);
-            if (s.equals("G")){
-                goOn = model.evolve();
-            }else if (s.equals("P")){
-                model.setPaid();
-            }else{
-                DinnerPhase ph = DinnerPhase.fromString(s);
-                goOn = model.evolveTo(ph);
-            }
-
-            stateString = model.getState().toString();
-            return stateString;
-        }
-*/
 
 }
