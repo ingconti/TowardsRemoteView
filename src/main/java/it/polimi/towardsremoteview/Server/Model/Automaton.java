@@ -1,6 +1,7 @@
 package it.polimi.towardsremoteview.Server.Model;
 
 
+import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 public class Automaton {
@@ -36,7 +37,10 @@ public class Automaton {
         int lastOrd = DinnerPhase.THE_END_OF_LUNCH.ordinal();
 
         if (currOrd < lastOrd) {
-            state = state.next();
+            DinnerPhase next = state.next();
+            tellToListener(state, next);
+            // and update:
+            state = next;
             return true;
         }
         return false;
@@ -51,11 +55,23 @@ public class Automaton {
         int currOrd = state.ordinal();
 
         if (toOrd>currOrd) {
+            tellToListener(state, toState);
+            // and update:
             state = toState;
             return true;
         }
         return false;
     }
+
+
+    private void tellToListener(DinnerPhase from, DinnerPhase to ){
+        PropertyChangeEvent evt = new PropertyChangeEvent(
+                this,
+                "PHASE_CHANGED",
+                from, to);
+            listener.propertyChange(evt);
+    }
+
 
     private PropertyChangeListener listener;
 

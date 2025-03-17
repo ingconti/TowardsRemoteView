@@ -6,7 +6,8 @@ import java.beans.PropertyChangeListener;
 public class ModelListener implements PropertyChangeListener {
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        String debugStr = evt.getPropertyName() + evt.getOldValue() + evt.getNewValue();
+        String debugStr = evt.getPropertyName()  + " " +
+                evt.getOldValue() + evt.getNewValue();
         System.out.println(debugStr);
     }
 }
