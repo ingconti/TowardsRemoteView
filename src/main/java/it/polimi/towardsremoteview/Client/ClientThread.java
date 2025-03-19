@@ -12,12 +12,12 @@ public class ClientThread extends Thread {
 
     public void run() {
         System.out.println("ClientThread started");
-        int i = 0;
 
         while (true) {
             try {
                 String answer = this.reader.readLine();
                 System.out.println(answer);
+                //AAAA this.co
             } catch (IOException e) {
                 e.printStackTrace();
             }

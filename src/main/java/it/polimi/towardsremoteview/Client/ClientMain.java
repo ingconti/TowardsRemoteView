@@ -17,7 +17,6 @@ public class ClientMain extends Application {
 
         Parent root = fxmlLoader.load();
         Controller controller = fxmlLoader.getController();
-        //was: controller.setStage(stage);
         controller.setStage(stage, this.virtualServer);
 
         Scene scene = new Scene(root, 320, 240);
