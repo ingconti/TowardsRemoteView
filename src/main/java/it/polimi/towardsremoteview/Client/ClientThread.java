@@ -17,7 +17,7 @@ public class ClientThread extends Thread {
         while (true) {
             try {
                 String answer = this.reader.readLine();
-                System.out.println(answer);
+                // System.out.println(answer);
                 this.updateUICallBack.process(answer);
             } catch (IOException e) {
                 e.printStackTrace();

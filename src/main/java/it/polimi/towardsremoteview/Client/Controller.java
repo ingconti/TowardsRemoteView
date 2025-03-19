@@ -1,5 +1,6 @@
 package it.polimi.towardsremoteview.Client;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -21,10 +22,20 @@ public class Controller {
     }
 
 
-/*
-    void updateView(String msg){
+
+    private void safeUpdateView(String msg){
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                updateView(msg);
+            }
+        });
+
+    }
+
+    private void updateView(String msg){
         this.welcomeText.setText(msg);
-    }*/
+    }
 
 
     VirtualServer virtualServer;
@@ -39,8 +50,9 @@ public class Controller {
         // add call back:
         this.updateUICallBack = new UpdateUICallBack() {
             @Override
-            public void process(String cmd) {
-                System.out.println("Call back " + cmd);
+            public void process(String answer) {
+                System.out.println("Call back " + answer);
+                safeUpdateView(answer);
             }
         };
 
