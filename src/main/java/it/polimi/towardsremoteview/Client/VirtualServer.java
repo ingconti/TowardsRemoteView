@@ -34,11 +34,22 @@ public class VirtualServer {
             System.exit(1);
         }
 
-        ClientThread clientThread = new ClientThread(in);
+        //was: ClientThread clientThread = new ClientThread(in);
+        this.clientThread = new ClientThread(in);
+        //added:
+        clientThread.setUICallBack(this.updateUICallBack);
         clientThread.start();
     } // end of start
 
     public void sendCmd(String cmd){
         out.println(cmd);
+    }
+
+
+    ClientThread clientThread;
+    private UpdateUICallBack updateUICallBack;
+
+    void setUICallBack(UpdateUICallBack updateUICallBack){
+        this.updateUICallBack = updateUICallBack;
     }
 }

@@ -30,13 +30,22 @@ public class Controller {
     VirtualServer virtualServer;
     private Stage stage;
 
+    UpdateUICallBack updateUICallBack;
+
     public void setStage(Stage stage, VirtualServer virtualServer) {
         this.stage = stage;
         this.virtualServer = virtualServer;
-        // create on fly:
-        this.viewUpdater = new ViewUpdater(this);
+
+        // add call back:
+        this.updateUICallBack = new UpdateUICallBack() {
+            @Override
+            public void process(String cmd) {
+                System.out.println("Call back " + cmd);
+            }
+        };
+
+        virtualServer.setUICallBack(this.updateUICallBack);
     }
 
-    private ViewUpdater viewUpdater;
 
 }

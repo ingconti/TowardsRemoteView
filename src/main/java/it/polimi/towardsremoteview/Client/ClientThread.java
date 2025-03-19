@@ -6,6 +6,7 @@ import java.io.IOException;
 public class ClientThread extends Thread {
     private BufferedReader reader;
 
+
     public ClientThread(BufferedReader reader) {
         this.reader = reader;
     }
@@ -17,10 +18,18 @@ public class ClientThread extends Thread {
             try {
                 String answer = this.reader.readLine();
                 System.out.println(answer);
-                //AAAA this.co
+                this.updateUICallBack.process(answer);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+
+    // add calk back:
+    private UpdateUICallBack updateUICallBack;
+
+    void setUICallBack(UpdateUICallBack updateUICallBack){
+        this.updateUICallBack = updateUICallBack;
     }
 }
