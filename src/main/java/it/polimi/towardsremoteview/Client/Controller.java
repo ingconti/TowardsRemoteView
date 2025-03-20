@@ -30,22 +30,23 @@ public class Controller {
 
 
     // todo: You will process answer..
-    private int xForAnswer(String answer) {
+    private ColorsAndCoord ColorsAndCoordForAnswer(String answer) {
         switch (answer) {
-            case "ENTREE":return 30;
-            case "MAIN COURSE":return 60;
-            case "SECOND COURSE":return 90;
-            case "DESSERT":return 120;
-            case "END OF YOUR LUNCH!":return 30;
+            case "ENTREE":return new ColorsAndCoord(30, Color.GREEN);
+            case "MAIN COURSE":return new ColorsAndCoord(60, Color.ORANGE);
+            case "SECOND COURSE":return new ColorsAndCoord(90, Color.BLUE);
+            case "DESSERT":return new ColorsAndCoord(120, Color.MAGENTA);
+            case "END OF YOUR LUNCH!":return new ColorsAndCoord(150, Color.YELLOW);
         }
-        return 0;
+        return new ColorsAndCoord(30, Color.BLACK);
     }
 
 
 
     private void addCircle(String answer){
-        double centerX = xForAnswer(answer), centerY = 100, radius = 30;
-        Circle c1 = new Circle(centerX, centerY, radius, Color.RED);
+        ColorsAndCoord colorsAndCoord = ColorsAndCoordForAnswer(answer);
+        double centerX = colorsAndCoord.x, centerY = 100, radius = 30;
+        Circle c1 = new Circle(centerX, centerY, radius, colorsAndCoord.c);
         this.hbox.getChildren().add(c1);
     }
 
