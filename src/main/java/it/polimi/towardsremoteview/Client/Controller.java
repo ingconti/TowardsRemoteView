@@ -3,11 +3,18 @@ package it.polimi.towardsremoteview.Client;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 public class Controller {
     @FXML
     private Label welcomeText;
+
+    @FXML
+    private HBox hbox;
+
 
     @FXML
     protected void onEvolveButtonClick() {
@@ -19,6 +26,27 @@ public class Controller {
     protected void onPayButtonClick() {
         String msg = "p"; // as per AutomatonFromNetwork.
         this.virtualServer.sendCmd(msg);
+    }
+
+
+    // todo: You will process answer..
+    private int xForAnswer(String answer) {
+        switch (answer) {
+            case "ENTREE":return 30;
+            case "MAIN COURSE":return 60;
+            case "SECOND COURSE":return 90;
+            case "DESSERT":return 120;
+            case "END OF YOUR LUNCH!":return 30;
+        }
+        return 0;
+    }
+
+
+
+    private void addCircle(String answer){
+        double centerX = xForAnswer(answer), centerY = 100, radius = 30;
+        Circle c1 = new Circle(centerX, centerY, radius, Color.RED);
+        this.hbox.getChildren().add(c1);
     }
 
 
@@ -35,6 +63,7 @@ public class Controller {
 
     private void updateView(String msg){
         this.welcomeText.setText(msg);
+        this.addCircle(msg);
     }
 
 

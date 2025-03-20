@@ -5,6 +5,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="it.polimi.towardsremoteview.Client.Controller">
     <padding>
@@ -12,6 +13,13 @@
     </padding>
 
     <Label fx:id="welcomeText"/>
-    <Button text="Evolve!" onAction="#onEvolveButtonClick"/>
+    <Button fx:id="a" text="Evolve!" onAction="#onEvolveButtonClick"/>
     <Button text="Pay!" onAction="#onPayButtonClick"/>
+
+
+
+    <HBox fx:id="hbox" >
+
+    </HBox>
+
 </VBox>
