@@ -23,11 +23,6 @@ public class VirtualView {
         this.clientSocket = clientSocket;
 
         CallBack callBack = (PropertyChangeEvent evt) -> {
-            /*
-            String debugStr = evt.getPropertyName()  + " from: " +
-                    evt.getOldValue() + " to: "  + evt.getNewValue();
-            System.out.println(debugStr);
-            */
             DinnerPhase state = this.controller.model.getState();
             String answer = state.toString();
             out.println(answer);
@@ -52,7 +47,6 @@ public class VirtualView {
         try {
             while ((s = in.readLine()) != null) {
                 System.out.println(s);
-                // no more...out.println(processCmd(s));
                 String status = this.controller.processCmd(s);
                 System.out.println(status); // only for debug. we do NOT send back!
             }
